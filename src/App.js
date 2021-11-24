@@ -1,16 +1,30 @@
-import pic1 from './images/pic1.jpeg'
-import pic2 from './images/pic2.jpeg'
-import pic3 from './images/pic3.gif'
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import TodoList from "./pages/TodoList";
+import IncompleteTasks from "./pages/IncompleteTasks";
+import CompletedTasks from "./pages/CompletedTasks";
 
 function App() {
-  return (
-    <div className="App">
-        <img src={pic1} className="App-logo" alt="logo" />
-        <img src={pic3} className="App-logo" alt="logo" />
-        <img src={pic2} className="App-logo" alt="logo" />
-    </div>
-  );
+	return (
+		<div className="App">
+			<Router>
+				<Switch>
+					<Route path="/incomplete">
+						<IncompleteTasks />
+					</Route>
+					<Route path="/complete">
+						<CompletedTasks />
+					</Route>
+					<Route exact path="/">
+						<TodoList />
+					</Route>
+				</Switch>
+			</Router>
+		</div>
+	);
 }
 
 export default App;
