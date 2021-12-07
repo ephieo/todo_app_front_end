@@ -1,3 +1,4 @@
+
 {
     "env": {
         "browser": true,
@@ -18,5 +19,8 @@
         "react"
     ],
     "rules": {
+        "no-mixed-spaces-and-tabs": 0,
+        "react/prop-types": 0,
+        "no-unused-vars": "off"
     }
 }
