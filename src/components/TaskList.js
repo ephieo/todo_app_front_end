@@ -30,19 +30,21 @@ export default function TaskList({ url }) {
 
 	return (
 		<>
-			<MainCont width="40vw">
-				<AddTaskButton />
-				{tasks ? (
+			<AddTaskButton />
+			<MainCont width="80vw" paddingTop="5rem">
+				{!(tasks instanceof TypeError) && tasks != null ? (
 					tasks.map((e) => {
 						return (
 							<TaskCont key={e.id}>
 								<TaskBox>
 									<TaskTitle>TASK : {e.task_name}</TaskTitle>
-									<Description>Description :{e.description}</Description>
+									<Description>Description : {e.description}</Description>
 									<DateText>DATE : {sortDateTime(e.created_at)[0]}</DateText>
 									<DateText>TIME : {sortDateTime(e.created_at)[1]}</DateText>
 								</TaskBox>
-								<CheckBox background={e.completed ? "#FF4703" : "#dbeccd"}>
+								<CheckBox
+									background={e.completed ? "#FF4703" : "#dbeccd"}
+									className="checkbox">
 									<Icon src={tick} alt="checkbox icon" />
 								</CheckBox>
 							</TaskCont>

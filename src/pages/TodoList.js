@@ -6,7 +6,7 @@ import { MainCont } from "../styled-components/reusables";
 export default function TodoList() {
 	const url = `http://localhost:4567/all-tasks`;
 	return (
-		<MainCont width="100%" marginTop="90rem">
+		<MainCont width="100%">
 			<NavBar />
 			<TaskList url={url} />
 		</MainCont>

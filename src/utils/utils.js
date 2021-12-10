@@ -5,8 +5,6 @@ export function fetchData(url) {
 }
 
 export function postData(url, taskname, description) {
-	console.log(taskname);
-	console.log(description);
 	return fetch(url, {
 		method: "POST",
 		headers: { "content-type": "application/JSON" },
@@ -18,6 +16,11 @@ export function postData(url, taskname, description) {
 	})
 		.then((result) => result.json())
 		.catch((error) => error);
+}
+
+export function paramsUrl(url, taskname, description) {
+	const newUrl = `${url}?task_name=${taskname}&description=${description}&completed=false`;
+	return newUrl;
 }
 
 export function sortDateTime(date) {

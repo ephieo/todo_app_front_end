@@ -12,6 +12,10 @@ export const Form = styled.form`
 	width: 30vw;
 	padding: 1rem;
 	color: #dbeccd;
+	@media screen and (max-width: 768px) {
+		width: auto;
+		font-size: 10px;
+	}
 `;
 export const Label = styled.label`
 	width: 70%;

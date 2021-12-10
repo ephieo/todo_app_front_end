@@ -6,7 +6,7 @@ import { MainCont } from "../styled-components/reusables";
 export default function CompletedTasks() {
 	const url = `http://localhost:4567/complete-tasks`;
 	return (
-		<MainCont width="100%" marginTop="30rem">
+		<MainCont width="100%">
 			<NavBar />
 			<TaskList url={url} />
 		</MainCont>
