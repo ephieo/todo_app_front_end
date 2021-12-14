@@ -57,8 +57,3 @@ describe("TaskList", () => {
 		expect(screen.getAllByText(/ADD NEW TASK/i));
 	});
 });
-
-test("async test", async () => {
-	const asyncMock = jest.fn().mockResolvedValueOnce("Failed Test");
-	await asyncMock();
-});
