@@ -1,9 +1,14 @@
 import React from "react";
+import TaskList from "../components/TaskList";
+import NavBar from "../components/NavBar";
+import { MainCont } from "../styled-components/reusables";
 
 export default function CompletedTasks() {
+	const url = `http://localhost:4567/complete-tasks`;
 	return (
-		<>
-			<h1>complete</h1>
-		</>
+		<MainCont width="100%">
+			<NavBar />
+			<TaskList url={url} />
+		</MainCont>
 	);
 }
