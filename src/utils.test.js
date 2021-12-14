@@ -10,7 +10,7 @@ describe("Utils", () => {
 		expect(requests.sortDateTime(date)[1]).toBe("00:37:01");
 	});
 
-	it("takes in a date and returns the time and date in an array", () => {
+	it("returns a url with the taskname and description interpolated into the string", () => {
 		let taskname = "Hello";
 		let description = "World!";
 		let correct_url =

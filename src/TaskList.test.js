@@ -15,8 +15,10 @@ describe("TaskList", () => {
 			created_at: "2021-11-24T10:07:04.696Z",
 		},
 	];
-	it("a request is made with the right parameter", async () => {
+	beforeEach(() => {
 		jest.spyOn(requests, "fetchData").mockResolvedValue(fakeTasks);
+	});
+	it("a request is made with the right parameter", async () => {
 		let url = `http://localhost:4567/all-tasks`;
 
 		await act(async () => {
@@ -30,8 +32,6 @@ describe("TaskList", () => {
 		expect(requests.fetchData).toHaveBeenCalledWith(url);
 	});
 	it("a task box has been rendered", async () => {
-		jest.spyOn(requests, "fetchData").mockResolvedValue(fakeTasks);
-
 		await act(async () => {
 			render(
 				<BrowserRouter>
@@ -46,8 +46,6 @@ describe("TaskList", () => {
 		expect(screen.getAllByText(/10:07:04/i));
 	});
 	it("The Add task button is rendered on the screen", async () => {
-		jest.spyOn(requests, "fetchData").mockResolvedValue(fakeTasks);
-
 		await act(async () => {
 			render(
 				<BrowserRouter>
